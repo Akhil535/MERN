@@ -33,13 +33,13 @@ export const Home = () => {
               <Mail className="w-5 h-5" /> akhiljithu1999@gmail.com
             </a>
             <a
-              href="tel:+919947961253"
+              href="tel:+971562476897"
               className="flex items-center gap-2 text-green-400 hover:text-green-300 transition"
             >
-              <Phone className="w-5 h-5" /> +91 99479 61253
+              <Phone className="w-5 h-5" /> +971562476897
             </a>
             <a
-              href="https://www.linkedin.com/in/akhilv535"
+              href="https://www.linkedin.com/in/akhil-v-33a226190/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sky-400 hover:text-sky-300 transition"
