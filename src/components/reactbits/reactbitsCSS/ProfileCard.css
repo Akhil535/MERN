@@ -351,6 +351,23 @@
     height: 70svh;
     max-height: 450px;
     margin: 22px auto;
+     /* Disable heavy effects on mobile */
+    /* transition: transform 1s ease; */
+    /* animation: glow-bg 12s linear infinite; */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .pc-card:hover,
+  .pc-card.active {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .pc-shine {
+    animation: none !important;
+    filter: none !important;
+  
   }
 
   .pc-details {
