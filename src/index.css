@@ -53,3 +53,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.w-fit {
+  min-width: -webkit-fill-available;
+  min-width: fill-available; /* fallback for other browsers */
+}
