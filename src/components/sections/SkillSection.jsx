@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import CountUp from "../reactbits/Countup";
 
-// Replace with your own image URLs or icons
+// Skill Icons
 import htmlIcon from "../../assets/skills/html.png";
 import jsIcon from "../../assets/skills/javascript.png";
 import reactIcon from "../../assets/skills/react.png";
@@ -17,6 +18,7 @@ import vscodeIcon from "../../assets/skills/vscode.png";
 import dockerIcon from "../../assets/skills/docker.png";
 import figmaIcon from "../../assets/skills/figma.png";
 
+// Skills data
 const skills = [
   { name: "HTML/CSS", level: 95, category: "frontend", details: "Expert in HTML and CSS.", icon: htmlIcon },
   { name: "JavaScript", level: 90, category: "frontend", details: "Proficient in ES6+.", icon: jsIcon },
@@ -47,13 +49,13 @@ export const SkillSection = () => {
   return (
     <section id="skills" className="py-20 px-4 relative bg-background/60 backdrop-blur-md">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl mb-12 text-center text-3xl font-bold mb-8 bg-gradient-to-r from-green-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <h2 className="text-3xl md:text-4xl mb-12 text-center font-bold bg-gradient-to-r from-green-500 to-cyan-400 bg-clip-text text-transparent">
           My <span className="text-primary">Skills</span>
         </h2>
 
         {/* Category Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {categories.map((category, idx) => ( 
+          {categories.map((category, idx) => (
             <button
               key={idx}
               onClick={() => setActiveCategory(category)}
@@ -86,6 +88,7 @@ export const SkillSection = () => {
                   <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-2" />
                   <h3 className="font-semibold text-lg mb-1 select-none">{skill.name}</h3>
 
+                  {/* Progress bar */}
                   <div className="w-full h-3 rounded-full bg-secondary/40 overflow-hidden mb-2">
                     <div
                       className={`h-3 rounded-full transition-[width] duration-700 ease-out ${
@@ -95,7 +98,11 @@ export const SkillSection = () => {
                     ></div>
                   </div>
 
-                  <div className="text-sm font-medium">{skill.level}%</div>
+                  {/* CountUp percentage */}
+                  <div className="text-sm font-medium">
+                    <CountUp to={skill.level} duration={1.5} />
+                    %
+                  </div>
 
                   <p
                     className={`mt-2 text-xs leading-snug transition-opacity duration-300 ${
